@@ -53,7 +53,7 @@ class MaintenanceViewController: UIViewController {
         self.updateButton.backgroundColor = UIColor(hex: "#007AFF")
         self.updateButton.layer.cornerRadius = 4.0
         
-        let isMaintenanceAvailable = self.updateDataDictionary?.value(forKey: "isMaintenance") as! Bool
+        let isMaintenanceAvailable = self.updateDataDictionary?.value(forKey: "isMaintenance") as? Bool ?? false
         let iosUpdate = self.updateDataDictionary?.value(forKeyPath: "updateData.isIOSUpdate") as? Bool
         
         if iosUpdate == true {
