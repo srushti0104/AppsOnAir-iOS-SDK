@@ -95,6 +95,7 @@ class MaintenanceViewController: UIViewController {
                         if imageUrl == nil {
                             imageUrl =  Bundle.main.url(forResource: "MaintenanceIcon", withExtension: "png")
                         }
+                    print("image url===> \(String(describing: imageUrl))")
                         self.maintenanceLogoImageView.load(url: imageUrl!)
             }
                 if let bgColorCode = maintenanceData.value(forKey: "backgroundColorCode") as? String {
