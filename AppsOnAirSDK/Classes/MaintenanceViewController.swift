@@ -94,6 +94,9 @@ class MaintenanceViewController: UIViewController {
                     if !imageUrlStr.isEmpty {
                         let imageUrl = URL(string: imageUrlStr)
                         self.maintenanceLogoImageView.load(url: imageUrl!)
+                    }else{
+                        let imageUrl =  Bundle.main.url(forResource: "MaintenanceIcon", withExtension: "png")
+                        self.maintenanceLogoImageView.load(url: imageUrl!)
                     }
                    
                 }

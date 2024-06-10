@@ -43,7 +43,6 @@ struct AppUpdateRequest {
         
         let apiTask = session.dataTask(with: apiURL) { data, response, error in
             do {
-                print("response ===> \(response)")
                 print("URL = \(url)")
                 // make sure this JSON is in the format we expect
                 // convert data to json
