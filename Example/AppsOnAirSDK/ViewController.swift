@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         // Please replace your APP_ID from https://appsonair.com
         // appUpdateManager.setAppId(APP_ID: "XXXXX-XXXX-XXXX-XXXX-XXXXXXXX", showNativeUI: true/false)
         // appUpdateManager.setAppId("XXXXX-XXXX-XXXX-XXXX-XXXXXXXX", true)
-        appUpdateManager.setAppId("0014e691-3cc4-49eb-ab50-d361cac58e50", true)
+        appUpdateManager.setAppId("58d049e2-e569-462e-b674-612fd44ea8fe", true)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
