@@ -91,15 +91,12 @@ class MaintenanceViewController: UIViewController {
                 self.updateView.isHidden = true
                 self.appTitleText.text = Bundle.main.appName
                 if let imageUrlStr = maintenanceData.value(forKey: "image") as? String {
-                    if !imageUrlStr.isEmpty {
-                        let imageUrl = URL(string: imageUrlStr)
+                    var imageUrl = URL(string: imageUrlStr)
+                        if imageUrl == nil {
+                            imageUrl =  Bundle.main.url(forResource: "MaintenanceIcon", withExtension: "png")
+                        }
                         self.maintenanceLogoImageView.load(url: imageUrl!)
-                    }else{
-                        let imageUrl =  Bundle.main.url(forResource: "MaintenanceIcon", withExtension: "png")
-                        self.maintenanceLogoImageView.load(url: imageUrl!)
-                    }
-                   
-                }
+            }
                 if let bgColorCode = maintenanceData.value(forKey: "backgroundColorCode") as? String {
                     self.maintenanceView.backgroundColor = UIColor(hex: bgColorCode)
                 }
