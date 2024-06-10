@@ -93,7 +93,9 @@ class MaintenanceViewController: UIViewController {
                 if let imageUrlStr = maintenanceData.value(forKey: "image") as? String {
                     var imageUrl = URL(string: imageUrlStr)
                         if imageUrl == nil {
-                            self.maintenanceLogoImageView.image = UIImage(named: "MaintenanceIcon")
+                            if #available(iOS 13.0, *) {
+                                self.maintenanceLogoImageView.image = UIImage(systemName: "MaintenanceIcon")
+                            }
                         }else{
                             self.maintenanceLogoImageView.load(url: imageUrl!)
                         }
