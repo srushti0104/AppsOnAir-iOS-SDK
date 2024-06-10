@@ -94,6 +94,7 @@ class MaintenanceViewController: UIViewController {
                     var imageUrl = URL(string: imageUrlStr)
                         if imageUrl == nil {
                             imageUrl =  Bundle.main.url(forResource: "MaintenanceIcon", withExtension: "png")
+                            print("imageee url===> \(String(describing: imageUrl))")
                         }
                     print("image url===> \(String(describing: imageUrl))")
                         self.maintenanceLogoImageView.load(url: imageUrl!)
