@@ -93,7 +93,7 @@ class MaintenanceViewController: UIViewController {
                 if let imageUrlStr = maintenanceData.value(forKey: "image") as? String {
                     var imageUrl = URL(string: imageUrlStr)
                         if imageUrl == nil {
-                            self.maintenanceLogoImageView = UIImageView(image: UIImage(named: "MaintenanceIcon"))
+                            self.maintenanceLogoImageView.image = UIImage(named: "MaintenanceIcon")
                         }else{
                             self.maintenanceLogoImageView.load(url: imageUrl!)
                         }
