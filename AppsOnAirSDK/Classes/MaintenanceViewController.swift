@@ -8,7 +8,6 @@
 import UIKit
 import Foundation
 
-@available(iOS 13.0, *)
 class MaintenanceViewController: UIViewController {
     
     @IBOutlet weak var updateView: UIView!
@@ -20,7 +19,7 @@ class MaintenanceViewController: UIViewController {
     @IBOutlet weak var maintenanceView: UIView!
     @IBOutlet weak var staticMaintenanceView: UIView!
     @IBOutlet weak var customMaintenanceView: UIView!
-    @IBOutlet weak var maintenanceLogoImageView: UIImageView! = UIImageView(image: UIImage(systemName: "MaintenanceIcon"))
+    @IBOutlet weak var maintenanceLogoImageView: UIImageView!
     @IBOutlet weak var appTitleText: UILabel!
     @IBOutlet weak var maintenanceTitleText: UILabel!
     @IBOutlet weak var maintenanceReasonText: UILabel!
@@ -96,7 +95,7 @@ class MaintenanceViewController: UIViewController {
                         if imageUrl != nil {
                             self.maintenanceLogoImageView.load(url: imageUrl!)
                         }
-                }
+                    }
                 if let bgColorCode = maintenanceData.value(forKey: "backgroundColorCode") as? String {
                     self.maintenanceView.backgroundColor = UIColor(hex: bgColorCode)
                 }
