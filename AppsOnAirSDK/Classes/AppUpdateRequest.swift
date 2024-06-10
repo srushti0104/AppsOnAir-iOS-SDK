@@ -11,7 +11,7 @@ struct AppUpdateRequest {
     
     static func fetchAppUpdate(_ appID: String, completion: @escaping(NSDictionary) -> ()) {
         let session = URLSession(configuration: .default)
-        let url = "https://server.appsonair.com/v1/app-services/\(appID).json?now=\(Date().timeIntervalSince1970)"
+        let url = "https://server.appsonair.com/v1/app-services/\(appID)"
         let apiURL : URL = URL(string: url)!
         
         let apiTask = session.dataTask(with: apiURL) { data, response, error in
@@ -38,7 +38,7 @@ struct AppUpdateRequest {
     
     static func cdnRequest(_ appID: String, completion: @escaping(NSDictionary) -> ()) {
         let session = URLSession(configuration: .default)
-        let url = "https://static.dev.appsonair.com/app-details/\(appID).json"
+        let url = "https://static.dev.appsonair.com/app-details/\(appID).json?now=\(Date().timeIntervalSince1970)"
         let apiURL : URL = URL(string: url)!
         
         let apiTask = session.dataTask(with: apiURL) { data, response, error in

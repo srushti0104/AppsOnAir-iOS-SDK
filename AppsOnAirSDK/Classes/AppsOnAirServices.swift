@@ -16,18 +16,18 @@ public class AppsOnAirServices : NSObject, NetworkServiceDelegate {
     var networkService: NetworkService = ReachabilityNetworkService()
     var isShowNativeUI: Bool = false
     public func setAppId(_ appId: String,_ showNativeUI: Bool = false) -> (Void) {
+        print("===> setAppId done")
+        
         self.appId = appId;
         self.isShowNativeUI = showNativeUI
         
         networkService.delegate = self
         networkService.startMonitoring()
-        
-        
     }
     
     func networkStatusDidChange(status: Bool) {
+        print("Network is \(status)")
         if status {
-            print("Network is available")
             if(isShowNativeUI) {
                 // get app data from CDN
                 AppUpdateRequest.cdnRequest(self.appId) { cdnData in
@@ -44,50 +44,32 @@ public class AppsOnAirServices : NSObject, NetworkServiceDelegate {
                     } else {
                         self.presentAppUpdate(appUpdateInfo: appUpdateInfo)
                     }
-                    
-                    
-                    
+                
                 }
                 
-                /*AppUpdateRequest.fetchAppUpdate(self.appId) { (appUpdateData) in
-                    let items = appUpdateData.count;
-                    if (items > 0) {
-                        let bundle = Bundle(for: type(of: self))
-                        let storyboard = UIStoryboard(name: "AppUpdate", bundle: bundle)
-                        let modalVc = storyboard.instantiateViewController(withIdentifier: "MaintenanceViewController") as! MaintenanceViewController
-                        modalVc.updateDataDictionary = appUpdateData
-                        DispatchQueue.main.sync {
-                            let navController = UINavigationController(rootViewController: modalVc)
-                            navController.modalPresentationStyle = .overCurrentContext
-                            let topController = UIApplication.topMostViewController()
-                            topController?.present(navController, animated: true) {
-                                // This code snippet is for fixing one UI accessbility related bug for our other cross platform plugin
-                                NotificationCenter.default.post(name: NSNotification.Name("visibilityChanges"), object: nil, userInfo: ["isPresented": true])
-                            }
-                        }
-                    }
-                }*/
             }
-        } else {
-            print("Network is not available")
         }
     }
     
-    /// handle force update | mantenance alert using App data
+    /// handle force update | maintenance alert using App data
     func presentAppUpdate(appUpdateInfo: NSDictionary) {
         if (appUpdateInfo.count > 0) {
-            let bundle = Bundle(for: type(of: self))
-            let storyboard = UIStoryboard(name: "AppUpdate", bundle: bundle)
-            let modalVc = storyboard.instantiateViewController(withIdentifier: "MaintenanceViewController") as! MaintenanceViewController
-            modalVc.updateDataDictionary = appUpdateInfo
             DispatchQueue.main.sync {
-                let navController = UINavigationController(rootViewController: modalVc)
-                navController.modalPresentationStyle = .overCurrentContext
-                let topController = UIApplication.topMostViewController()
-                topController?.present(navController, animated: true) {
-                    // This code snippet is for fixing one UI accessbility related bug for our other cross platform plugin
-                    NotificationCenter.default.post(name: NSNotification.Name("visibilityChanges"), object: nil, userInfo: ["isPresented": true])
+                let bundle = Bundle(for: type(of: self))
+                let storyboard = UIStoryboard(name: "AppUpdate", bundle: bundle)
+                let modalVc = storyboard.instantiateViewController(withIdentifier: "MaintenanceViewController") as! MaintenanceViewController
+                modalVc.updateDataDictionary = appUpdateInfo
+                
+                if let topController = UIApplication.topMostViewController(), !(topController is MaintenanceViewController) {
+                    let navController = UINavigationController(rootViewController: modalVc)
+                    navController.modalPresentationStyle = .overCurrentContext
+                    let topController = UIApplication.topMostViewController()
+                    topController?.present(navController, animated: true) {
+                        // This code snippet is for fixing one UI accessability related bug for our other cross platform plugin
+                        NotificationCenter.default.post(name: NSNotification.Name("visibilityChanges"), object: nil, userInfo: ["isPresented": true])
+                    }
                 }
+                
             }
         }
     
