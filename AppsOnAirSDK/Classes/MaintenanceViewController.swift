@@ -95,6 +95,7 @@ class MaintenanceViewController: UIViewController {
                         if imageUrl == nil {
                             if #available(iOS 13.0, *) {
                                 self.maintenanceLogoImageView.image = UIImage(systemName: "MaintenanceIcon")
+                                print("image ====> \(String(describing: self.maintenanceLogoImageView.image))")
                             }
                         }else{
                             self.maintenanceLogoImageView.load(url: imageUrl!)
