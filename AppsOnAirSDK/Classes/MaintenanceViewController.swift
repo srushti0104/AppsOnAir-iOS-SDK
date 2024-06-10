@@ -115,7 +115,7 @@ class MaintenanceViewController: UIViewController {
                 self.staticMaintenanceView.isHidden = false
                 self.updateView.isHidden = true
                 self.staticMaintenanceImageView.image = UIImage.appIcon
-                self.staticMaintenanceText.text = "\(Bundle.main.appName!) app is under maintenance"
+                self.staticMaintenanceText.text = "\(Bundle.main.appName ?? "") app is under maintenance"
                 self.staticMaintenanceText.sizeToFit()
             }
         } else {
@@ -126,7 +126,7 @@ class MaintenanceViewController: UIViewController {
     func showUpdateView(_ isForceUpdate: Bool) {
         self.view.backgroundColor = UIColor(hex: "#00000080")
         self.logoImageView.image = UIImage.appIcon
-        self.titleText.text = "\(Bundle.main.appName!) app update available"
+        self.titleText.text = "\(Bundle.main.appName ?? "") app update available"
         if isForceUpdate == true {
             self.subTitleText.text = "An update is available that must be installed."
         } else {
