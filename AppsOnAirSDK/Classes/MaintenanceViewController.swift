@@ -91,7 +91,7 @@ class MaintenanceViewController: UIViewController {
                 self.updateView.isHidden = true
                 self.appTitleText.text = Bundle.main.appName
                 if let imageUrlStr = maintenanceData.value(forKey: "image") as? String {
-                    var imageUrl = URL(string: imageUrlStr)
+                    let imageUrl = URL(string: imageUrlStr)
                         if imageUrl != nil {
                             self.maintenanceLogoImageView.load(url: imageUrl!)
                         }
