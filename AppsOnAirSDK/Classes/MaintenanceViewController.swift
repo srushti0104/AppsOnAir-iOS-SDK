@@ -93,11 +93,10 @@ class MaintenanceViewController: UIViewController {
                 if let imageUrlStr = maintenanceData.value(forKey: "image") as? String {
                     var imageUrl = URL(string: imageUrlStr)
                         if imageUrl == nil {
-                            imageUrl =  Bundle.main.url(forResource: "MaintenanceIcon", withExtension: "png")
-                            print("imageee url===> \(String(describing: imageUrl))")
+                            self.maintenanceLogoImageView = UIImageView(image: UIImage(named: "MaintenanceIcon"))
+                        }else{
+                            self.maintenanceLogoImageView.load(url: imageUrl!)
                         }
-                    print("image url===> \(String(describing: imageUrl))")
-                        self.maintenanceLogoImageView.load(url: imageUrl!)
             }
                 if let bgColorCode = maintenanceData.value(forKey: "backgroundColorCode") as? String {
                     self.maintenanceView.backgroundColor = UIColor(hex: bgColorCode)
