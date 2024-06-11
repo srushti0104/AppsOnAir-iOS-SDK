@@ -89,7 +89,13 @@ class MaintenanceViewController: UIViewController {
                 self.customMaintenanceView.isHidden = false
                 self.staticMaintenanceView.isHidden = true
                 self.updateView.isHidden = true
-                self.appTitleText.text = Bundle.main.appName
+                
+                //check if app name is availble or not if yes then assign app name.
+                if let appTitle = Bundle.main.appName {
+                    self.appTitleText.text = Bundle.main.appName
+                }
+                
+                //check if maintenance logo image is available or not if yes then get from maintenance data
                 if let imageUrlStr = maintenanceData.value(forKey: "image") as? String {
                     if let imageUrl = URL(string: imageUrlStr) {
                         self.maintenanceLogoImageView.load(url: imageUrl)
@@ -116,8 +122,10 @@ class MaintenanceViewController: UIViewController {
                 self.staticMaintenanceView.isHidden = false
                 self.updateView.isHidden = true
                 self.staticMaintenanceImageView.image = UIImage.appIcon
-                if let maintenanceValue = Bundle.main.appName {
-                    self.maintenanceTitleText.text = "\(maintenanceValue) app is under maintenance"
+                
+                //check if app name is availble or not if yes then assign app name.
+                if let appTitle = Bundle.main.appName {
+                    self.maintenanceTitleText.text = "\(appTitle) app is under maintenance"
                 }
                 self.staticMaintenanceText.sizeToFit()
             }
@@ -129,6 +137,8 @@ class MaintenanceViewController: UIViewController {
     func showUpdateView(_ isForceUpdate: Bool) {
         self.view.backgroundColor = UIColor(hex: "#00000080")
         self.logoImageView.image = UIImage.appIcon
+        
+        //check if app name is availble or not if yes then assign app name.
         if let titleValue = Bundle.main.appName {
             self.titleText.text = "\(titleValue) app update available"
         }
