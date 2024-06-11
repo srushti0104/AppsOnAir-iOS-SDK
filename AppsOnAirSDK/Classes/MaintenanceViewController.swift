@@ -119,7 +119,6 @@ class MaintenanceViewController: UIViewController {
                 if let maintenanceValue = Bundle.main.appName {
                     self.maintenanceTitleText.text = "\(maintenanceValue) app is under maintenance"
                 }
-//                self.staticMaintenanceText.text = "\(Bundle.main.appName ?? "") app is under maintenance"
                 self.staticMaintenanceText.sizeToFit()
             }
         } else {
@@ -133,7 +132,6 @@ class MaintenanceViewController: UIViewController {
         if let titleValue = Bundle.main.appName {
             self.titleText.text = "\(titleValue) app update available"
         }
-//        self.titleText.text = "\(Bundle.main.appName ?? "") app update available"
         if isForceUpdate == true {
             self.subTitleText.text = "An update is available that must be installed."
         } else {
