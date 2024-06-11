@@ -69,8 +69,8 @@ class MaintenanceViewController: UIViewController {
                     }
                     let versionCompare = Bundle.main.releaseVersionNumber!.compare(iosMinBuildVersion!, options: .numeric)
                     if versionCompare == .orderedSame {
-                        let builNumber = Bundle.main.buildVersionNumber!.compare(iosMinBuildNumber!, options: .numeric)
-                        if builNumber == .orderedAscending {
+                        let buildNumber = Bundle.main.buildVersionNumber!.compare(iosMinBuildNumber!, options: .numeric)
+                        if buildNumber == .orderedAscending {
                             self.showUpdateView(isForceUpdate!)
                         } else {
                             self.dismissController()
@@ -123,7 +123,7 @@ class MaintenanceViewController: UIViewController {
                 self.updateView.isHidden = true
                 self.staticMaintenanceImageView.image = UIImage.appIcon
                 
-                //check if app name is availble or not if yes then assign app name.
+                //check if app name is available or not if yes then assign app name.
                 if let appTitle = Bundle.main.appName {
                     self.maintenanceTitleText.text = "\(appTitle) app is under maintenance"
                 }
