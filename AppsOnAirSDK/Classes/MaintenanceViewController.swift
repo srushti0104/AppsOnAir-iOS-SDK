@@ -91,11 +91,10 @@ class MaintenanceViewController: UIViewController {
                 self.updateView.isHidden = true
                 self.appTitleText.text = Bundle.main.appName
                 if let imageUrlStr = maintenanceData.value(forKey: "image") as? String {
-                    let imageUrl = URL(string: imageUrlStr)
-                        if imageUrl != nil {
-                            self.maintenanceLogoImageView.load(url: imageUrl!)
-                        }
+                    if let imageUrl = URL(string: imageUrlStr) {
+                        self.maintenanceLogoImageView.load(url: imageUrl)
                     }
+                }
                 if let bgColorCode = maintenanceData.value(forKey: "backgroundColorCode") as? String {
                     self.maintenanceView.backgroundColor = UIColor(hex: bgColorCode)
                 }
@@ -117,7 +116,10 @@ class MaintenanceViewController: UIViewController {
                 self.staticMaintenanceView.isHidden = false
                 self.updateView.isHidden = true
                 self.staticMaintenanceImageView.image = UIImage.appIcon
-                self.staticMaintenanceText.text = "\(Bundle.main.appName ?? "") app is under maintenance"
+                if let maintenanceValue = Bundle.main.appName {
+                    self.maintenanceTitleText.text = "\(maintenanceValue) app is under maintenance"
+                }
+//                self.staticMaintenanceText.text = "\(Bundle.main.appName ?? "") app is under maintenance"
                 self.staticMaintenanceText.sizeToFit()
             }
         } else {
@@ -128,7 +130,10 @@ class MaintenanceViewController: UIViewController {
     func showUpdateView(_ isForceUpdate: Bool) {
         self.view.backgroundColor = UIColor(hex: "#00000080")
         self.logoImageView.image = UIImage.appIcon
-        self.titleText.text = "\(Bundle.main.appName ?? "") app update available"
+        if let titleValue = Bundle.main.appName {
+            self.titleText.text = "\(titleValue) app update available"
+        }
+//        self.titleText.text = "\(Bundle.main.appName ?? "") app update available"
         if isForceUpdate == true {
             self.subTitleText.text = "An update is available that must be installed."
         } else {
