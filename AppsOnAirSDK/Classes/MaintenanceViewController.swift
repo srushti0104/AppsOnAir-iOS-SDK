@@ -90,9 +90,9 @@ class MaintenanceViewController: UIViewController {
                 self.staticMaintenanceView.isHidden = true
                 self.updateView.isHidden = true
                 
-                //check if app name is availble or not if yes then assign app name.
+                //check if app name is available or not if yes then assign app name.
                 if let appTitle = Bundle.main.appName {
-                    self.appTitleText.text = Bundle.main.appName
+                    self.appTitleText.text = appTitle
                 }
                 
                 //check if maintenance logo image is available or not if yes then get from maintenance data

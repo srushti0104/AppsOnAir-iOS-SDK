@@ -21,6 +21,7 @@
 		6B79FA8C4B77C4FBE5F8C7E1E9BDDBFB /* Pods-AppsOnAirSDK_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E514B51DF54B9C37C1AA24103B6FDC9 /* Pods-AppsOnAirSDK_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9B9106478C29CBB9542DED5ABA0DDF2D /* MaintenanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE037E0E69932A520705D4DD1AF662 /* MaintenanceViewController.swift */; };
 		AB20EA700D5F8CCB00E2E661B5003B3F /* Pods-AppsOnAirSDK_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D3301D85306CE80DAC60432902A01957 /* Pods-AppsOnAirSDK_Tests-dummy.m */; };
+		ABED93AB2C207521004F8C7A /* EnvironmentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABED93AA2C207521004F8C7A /* EnvironmentConfig.swift */; };
 		ADF4662C74CDCDBFBDE220F83030A031 /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B038C405DB8DA03E509F3089CCACEE /* Bundle+extension.swift */; };
 		C385C5E84CA11A4F3A29B415C968C7AB /* UIApplication+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8B33699A0AE0B283E37906925162A9 /* UIApplication+extension.swift */; };
 		CA76A10B2D4C394C1CF3B134CEC041A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2B117F7A3CB312FF54BFF9D46B0180 /* Foundation.framework */; };
@@ -101,6 +102,7 @@
 		A27B6CF5569E1489C4DC7664EFBC10B4 /* AppsOnAir-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AppsOnAir-dummy.m"; sourceTree = "<group>"; };
 		AA46E7F135AA77A161F7C0785FEC3EC7 /* AppsOnAirServices.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppsOnAirServices.swift; path = AppsOnAirSDK/Classes/AppsOnAirServices.swift; sourceTree = "<group>"; };
 		AB838129C5028C64FA5F41787CE38EBF /* Pods_AppsOnAirSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppsOnAirSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABED93AA2C207521004F8C7A /* EnvironmentConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnvironmentConfig.swift; path = AppsOnAirSDK/Classes/EnvironmentConfig.swift; sourceTree = "<group>"; };
 		AE60F4C4AE4DD60EA6D66C8430C9ADBC /* Pods-AppsOnAirSDK_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppsOnAirSDK_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		B11F99E8DFD43B4F48BF58F61FCE5FD2 /* Pods-AppsOnAirSDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AppsOnAirSDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C421B2CCC785C79808F7CEA754F818EE /* AppsOnAir.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AppsOnAir.modulemap; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				59531F987AA7408F83968510C4FF83DE /* AppUpdate.storyboard */,
 				04685BDC001967CD7C0163D7F282E82D /* AppUpdateRequest.swift */,
 				F8B038C405DB8DA03E509F3089CCACEE /* Bundle+extension.swift */,
+				ABED93AA2C207521004F8C7A /* EnvironmentConfig.swift */,
 				2AAE037E0E69932A520705D4DD1AF662 /* MaintenanceViewController.swift */,
 				ECCFE0E0FFDBD8ED53F6CC5D65FFE51D /* NetwarkWatcher.swift */,
 				FF8B33699A0AE0B283E37906925162A9 /* UIApplication+extension.swift */,
@@ -541,6 +544,7 @@
 				9B9106478C29CBB9542DED5ABA0DDF2D /* MaintenanceViewController.swift in Sources */,
 				DBBA30CD7E1D61F44BDB48C1C588F7A6 /* NetwarkWatcher.swift in Sources */,
 				C385C5E84CA11A4F3A29B415C968C7AB /* UIApplication+extension.swift in Sources */,
+				ABED93AB2C207521004F8C7A /* EnvironmentConfig.swift in Sources */,
 				42CD82D6DA330274CA32DEBCF05D79C3 /* UIColor+extension.swift in Sources */,
 				03773526508656908CBA556B04E7B740 /* UIImage+extension.swift in Sources */,
 				ED16AF135CA90E7A2C3B9F3F3BE01B5D /* UIImageView+extension.swift in Sources */,
