@@ -3,7 +3,7 @@ struct EnvironmentConfig{
     
 // MARK: - Development Config:
     static let serverBaseURl = "https://server.dev.appsonair.com/"
-    static let cdnBaseURL = "https://appsonair-local.b-cdn.net/"
+    static let cdnBaseURL = "https://static.dev.appsonair.com/"
    
     
     
